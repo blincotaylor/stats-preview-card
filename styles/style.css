@@ -54,6 +54,7 @@
 }
 
 .card {
+  margin: 2rem 0;
   width: 90%;
   justify-self: center;
   align-self: center;
@@ -96,7 +97,6 @@
   text-transform: uppercase;
 
   display: grid;
-  grid-auto-flow: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
