@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+:root {
+  /* COLORS */
+  --main-background-color: hsl(233, 47%, 7%);
+  --card-background: hsl(244, 38%, 16%);
+  --accent: hsl(278, 59%, 48%);
+  --accent-trsp: hsla(278, 88%, 19%, 0.514); /*image overlay, highlight */
+  --white: hsl(0, 0%, 100%); /* main heading, stats*/
+  --slight-trsp-white: hsla(0, 0%, 100%, 0.75); /* main p */
+  --moderate-trsp-white: hsla(0, 0%, 100%, 0.438); /* stat headings */
+
+  /* TYPOGRAPHY */
+  --fs-default: 15px;
+  --fontf-inter: "Inter", sans-serif;
+  --fontf-lexend: "Lexend Deca", sans-serif;
+  --fontw-reg: 400;
+  --fontw-bold: 700;
+
+  /* SCREEN SIZING */
+  --screen-mobile: 375px;
+  --screen-desktop: 1440px;
+}
+
+.main-white {
+  color: var(--slight-trsp-white);
+}
+
+.trsp-white {
+  color: var(--moderate-trsp-white);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.frontend-attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--slight-trsp-white);
+}
+
+.frontend-attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.page-container {
+  min-height: 100vh;
+  background-color: var(--main-background-color);
+  font-family: var(--fontf-inter);
+  font-size: var(--fs-default);
+
+  display: grid;
+}
+
+.card {
+  width: 90%;
+  justify-self: center;
+  align-self: center;
+  font-size: 0.95rem;
+}
+
+.card__body {
+  background: var(--card-background);
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  padding: 1.25rem;
+
+  display: grid;
+  justify-items: center;
+  gap: 2.5rem;
+}
+
+.card__image-container {
+  background: linear-gradient(to top, var(--accent-trsp), var(--accent-trsp)),
+    url("../images/image-header-mobile.jpg");
+  background-size: cover;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 15rem;
+}
+
+.card__main-text {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.card__title {
+  font-family: var(--fontf-inter);
+  font-size: 2rem;
+}
+
+.card__stats {
+  padding-bottom: 0.5rem;
+  font-family: var(--fontf-lexend);
+  text-transform: uppercase;
+
+  display: grid;
+  grid-auto-flow: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.number {
+  font-weight: var(--fontw-bold);
+}
+
+@media (min-width: 1440px) {
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .card__body {
+    border-radius: 10px 0 0 10px;
+    width: 80%;
+
+    padding: 4rem;
+    font-size: 1.1rem;
+
+    text-align: left;
+
+    display: grid;
+    justify-items: start;
+    gap: 5rem;
+  }
+
+  .card__image-container {
+    border-radius: 0 10px 10px 0;
+    min-height: 38rem;
+    background: linear-gradient(to top, var(--accent-trsp), var(--accent-trsp)),
+      url("../images/image-header-desktop.jpg");
+    background-size: cover;
+  }
+
+  .card__main-text {
+    gap: 0;
+  }
+
+  .card__title {
+    font-size: 2.5rem;
+  }
+
+  .number {
+    font-size: 2rem;
+  }
+
+  .card__stats {
+    display: flex;
+    gap: 4rem;
+  }
+}
